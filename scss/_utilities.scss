@@ -1,0 +1,117 @@
+.container {
+    max-width: $max-width;
+    padding: 0 1.4rem;
+    margin: auto;
+}
+
+//buttons
+//bütün butonlar için temel özellikler
+%btn-shared {
+    display: inline-block;
+    padding: .7rem 2rem;
+    transition: all .5s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    &-primary {
+        //btn-shared özellikleri olsun
+        @extend %btn-shared;
+        //ayrıyeten de arkaplanı da olsun
+        color: #333;
+        background-color: $primary-color;
+    }
+    &-light {
+        //btn-shared özellikleri olsun
+        @extend %btn-shared;
+        //ayrıyeten de arkaplanı da olsun
+        color: #333;
+        background-color: $light-color;
+    }
+    &-dark {
+        //btn-shared özellikleri olsun
+        @extend %btn-shared;
+        //ayrıyeten de arkaplanı da olsun
+        color: #FFF;
+        background-color: $dark-color;
+    }
+}
+
+//nesnelerin class'ı 'btn-' ile başlayanlar hover olduğunda;
+button[class ^= 'btn-']:hover,
+a[class ^= 'btn-']:hover,
+input[class ^= 'btn-']:hover {
+    background-color: $primary-color;
+}
+
+//background 
+.bg {
+    //bg-dark {}
+    &-dark {
+        background-color: $dark-color;
+    }
+    //bg-primary {}
+    &-primary {
+        background-color: $primary-color;
+    }
+    //bg-light {}
+    &-light {
+        background-color: $light-color;
+    }
+}
+
+//padding
+.py {
+    &-1 {
+        padding: 1rem 0;
+    }
+    &-2 {
+        padding: 2rem 0;
+    }
+    &-3 {
+        padding: 3rem 0;
+    }
+    &-4 {
+        padding: 4rem 0;
+    }
+}
+
+//margin
+.my {
+    &-1 {
+        margin: 1rem 0;
+    }
+    &-2 {
+        margin: 2rem 0;
+    }
+    &-3 {
+        margin: 3rem 0;
+    }
+    &-4 {
+        margin: 4rem 0;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.border-bottom {
+    height: 3px;
+    width: 3rem;
+    background-color: $primary-color;
+    margin: 0 auto 1rem auto;
+}
+
+.lead {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    word-spacing: 2px;
+}

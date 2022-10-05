@@ -1,0 +1,38 @@
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    box-shadow: grey;
+
+    .item {
+        background-color: $light-color;
+        position: relative;
+        //vereceğimiz kutu gözükmesin ekranda
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            background-color: yellow;
+            opacity: .6;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-100%) translateY(-10%) rotate(45deg);
+            transition: transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        }
+
+        &:hover::after {
+            //scale(2) -- kutuyu 2katı büyük yap
+            transform: scale(2) translate(85%) rotate(0deg);
+        }
+
+        &__image {
+            img {
+                height: 18rem;
+            }
+        }
+    }
+}
